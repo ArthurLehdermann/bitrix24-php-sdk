@@ -258,4 +258,55 @@ class Category extends Bitrix24Entity
         );
         return $fullResult;
     }
+
+    /**
+     * @param $categoryId
+     * @return array
+     * @throws \Bitrix24\Exceptions\Bitrix24ApiException
+     * @throws \Bitrix24\Exceptions\Bitrix24EmptyResponseException
+     * @throws \Bitrix24\Exceptions\Bitrix24Exception
+     * @throws \Bitrix24\Exceptions\Bitrix24IoException
+     * @throws \Bitrix24\Exceptions\Bitrix24MethodNotFoundException
+     * @throws \Bitrix24\Exceptions\Bitrix24PaymentRequiredException
+     * @throws \Bitrix24\Exceptions\Bitrix24PortalDeletedException
+     * @throws \Bitrix24\Exceptions\Bitrix24PortalRenamedException
+     * @throws \Bitrix24\Exceptions\Bitrix24SecurityException
+     * @throws \Bitrix24\Exceptions\Bitrix24TokenIsExpiredException
+     * @throws \Bitrix24\Exceptions\Bitrix24TokenIsInvalidException
+     * @throws \Bitrix24\Exceptions\Bitrix24WrongClientException
+     */
+    public function stages($categoryId)
+    {
+        $fullResult = $this->client->call(
+            'crm.dealcategory.stage.list',
+            array('id' => $categoryId)
+        );
+        return $fullResult;
+    }
+
+    /**
+     * @param $categoryId
+     * @return array
+     * @throws \Bitrix24\Exceptions\Bitrix24ApiException
+     * @throws \Bitrix24\Exceptions\Bitrix24EmptyResponseException
+     * @throws \Bitrix24\Exceptions\Bitrix24Exception
+     * @throws \Bitrix24\Exceptions\Bitrix24IoException
+     * @throws \Bitrix24\Exceptions\Bitrix24MethodNotFoundException
+     * @throws \Bitrix24\Exceptions\Bitrix24PaymentRequiredException
+     * @throws \Bitrix24\Exceptions\Bitrix24PortalDeletedException
+     * @throws \Bitrix24\Exceptions\Bitrix24PortalRenamedException
+     * @throws \Bitrix24\Exceptions\Bitrix24SecurityException
+     * @throws \Bitrix24\Exceptions\Bitrix24TokenIsExpiredException
+     * @throws \Bitrix24\Exceptions\Bitrix24TokenIsInvalidException
+     * @throws \Bitrix24\Exceptions\Bitrix24WrongClientException
+     */
+    public function status($categoryId)
+    {
+        $fullResult = $this->client->call(
+            'crm.dealcategory.status',
+            array('id' => $categoryId)
+        );
+        return $fullResult;
+    }
+
 }
